@@ -76,7 +76,7 @@ public class RNVoipNotificationHelper {
                 .setSound(sounduri)
                 .setContentText(json.getString("notificationBody"))
                 .addAction(0, json.getString("answerActionTitle"), getPendingIntent(notificationID, "callAnswer",json))
-                .addAction(0, json.getString("declineActionTitle"), getPendingIntent(notificationID, "callDismiss",json))
+                .addAction(0, json.getString("declineActionTitle"), callDismissIntent)
                 .build();
 
         NotificationManager notificationManager = notificationManager();
